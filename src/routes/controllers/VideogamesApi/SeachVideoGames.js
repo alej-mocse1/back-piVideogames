@@ -1,7 +1,8 @@
 const axios = require('axios');
 require('dotenv').config();
-
 const{DB_APPI} = process.env;
+
+// busca los primeros videojuegos que me devuelve la api y los reduce con el slice a 15
 
 const SeachVideoGames = async (search) => {
   
@@ -11,10 +12,6 @@ const searchVg = await axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&s
 
     const generes = Element.genres.map(element => {
       return element.name
-      })
-    
-    const platform = Element.platforms.map((element) => {
-      return element.platform.name
       })
 
     return {
@@ -32,9 +29,8 @@ const searchVg = await axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&s
   }
 }
 
-// Imagen
-// Nombre
-// Géneros
+
+
 
 
 module.exports = { SeachVideoGames }  

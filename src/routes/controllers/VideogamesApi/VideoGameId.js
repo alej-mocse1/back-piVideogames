@@ -1,9 +1,13 @@
 const axios = require('axios');
 require('dotenv').config();
-
 const{DB_APPI} = process.env;
 
+
+///busco con el endopint solicitado en la consigna los datos de videojuego
+///creo un objeto con los datos me que sirven y lo retorno
+
 const videogameID = async (id) => {
+
 
     const resp = await axios.get(`https://api.rawg.io/api/games/${id}?key=${DB_APPI}`);
 
@@ -14,23 +18,20 @@ const videogameID = async (id) => {
     const platform = resp.data.platforms.map((element) => {
         return element.platform.name
         })
-
-    const obj = {
+        
+     
+     return  {
         imagen_backgrund: resp.data.background_image,
         nombre: resp.data.name,
-        Descripción: resp.data.description,
+        Descripción: resp.data.description_raw,
         Fecha_de_lanzamiento: resp.data.released,
         Rating:resp.data.rating,
         genres: generes,
-        Plataformas: platform
+        Plataformas: platform  
     }
    
-    return obj    
+
 }
-    // Los campos mostrados en la ruta principal para cada videojuego (imagen, nombre, y géneros)
-    // Descripción
-    // Fecha de lanzamiento
-    // Rating
-    // Plataformas
+
 
 module.exports = { videogameID }

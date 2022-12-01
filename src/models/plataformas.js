@@ -5,7 +5,7 @@ const { DataTypes } = require('sequelize');
 
 module.exports = ( sequelize ) => {
 
-    sequelize.define('genere', {
+    sequelize.define('plataforma', {
         id: {
             type: DataTypes.STRING,
             primaryKey: true,
@@ -17,24 +17,12 @@ module.exports = ( sequelize ) => {
         },   
         Nombre: {
             type: DataTypes.STRING,
-            allowNull:false,
             unique:true,
+            allowNull:false,
             validate:{
               isAlpha: true,
-              len: [3,30]
+              len: [3,12]
             }
         }
     })
 }
-
-  // id: {
-        //     type: DataTypes.INTEGER,
-        //     primaryKey: true,
-        //     // autoIncrement: true,
-        //     allowNull:false,
-        //     validate:{
-        //         isAlpha: true,
-        //         // max: 19,
-        //         // min: 1,
-        //       }
-        // },

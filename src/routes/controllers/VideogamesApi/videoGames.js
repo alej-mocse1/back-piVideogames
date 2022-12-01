@@ -1,8 +1,10 @@
 const axios = require('axios');
 require('dotenv').config();
-
 const{DB_APPI} = process.env;
 
+
+//busca los datos en la api con un promise.all para que se ejecuten al mismo tiempo
+//meto en un nuevo arreglo la propiedad en la que se encuentran los datos 5 veces
 
 const getV = async () => {
 
@@ -18,11 +20,16 @@ const result = await Promise.all(promesas);
 const respuesta = [];
 
 for(let i = 0 ; i< result.length; i++ ){
-  respuesta.push(result[i].data.results)}
+  respuesta.push(result[i].data.results)
+}
 
+// console.log( respuesta[0][0]);
 return respuesta
 }
  
+
+///creo un nuevo arreglo solo con los datos que me interesan
+//retorno el nuevo arreglo
 
 const getVideosgames = async () => {
 
@@ -39,9 +46,11 @@ for(let i = 0 ; i < 5; i++){
     })
      
      return {
+        filtrado : 'api',
         id: Element.id,
         imagen_backgrund: Element.background_image,
         nombre: Element.name,
+        rating:Element.rating,
         genres: generes}
         }))
 
@@ -50,11 +59,10 @@ for(let i = 0 ; i < 5; i++){
 
 
  return videosjuegos
+ 
 }
 
-// Imagen
-// Nombre
-// Géneros
+
 
     
    
