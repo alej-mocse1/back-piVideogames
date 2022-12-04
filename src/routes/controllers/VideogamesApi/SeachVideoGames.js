@@ -1,6 +1,6 @@
 const axios = require('axios');
 require('dotenv').config();
-const{DB_APPI} = process.env;
+const{DB_APPI, DB_DEPLOY} = process.env;
 
 // busca los primeros videojuegos que me devuelve la api y los reduce con el slice a 15
 
