@@ -1,6 +1,6 @@
 const axios = require('axios');
 require('dotenv').config();
-// const{DB_APPI} = process.env;
+const{DB_APPI} = process.env;
 
 
 //buscamos la info de la api con el endpoint solicidado
