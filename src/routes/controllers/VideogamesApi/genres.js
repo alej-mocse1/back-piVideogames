@@ -1,6 +1,6 @@
 const axios = require('axios');
 require('dotenv').config();
-const{DB_APPI} = process.env;
+// const{DB_APPI} = process.env;
 
 
 //buscamos la info de la api con el endpoint solicidado
@@ -9,7 +9,7 @@ const{DB_APPI} = process.env;
 
 const searchGenres = async () => {
 
-    const SearchGenress = await axios.get(`https://api.rawg.io/api/genres?key=${DB_APPI}`);
+    const SearchGenress = await axios.get(`https://api.rawg.io/api/genres?key=49a5370f78314b399b71efd92311605c`);
 
     const results = SearchGenress.data.results.map((Element) => {
         return { 
