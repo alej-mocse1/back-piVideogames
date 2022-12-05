@@ -9,10 +9,10 @@ const{DB_APPI,PORT} = process.env;
 const getV = async () => {
 
 const promesas = [axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}`),
-                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}`),
-                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}`),
-                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}`),
-                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}`)]
+                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&page=2`),
+                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&page=3`),
+                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&page=4`),
+                  axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&page=5`)]
 
 
 const result = await Promise.all(promesas);
