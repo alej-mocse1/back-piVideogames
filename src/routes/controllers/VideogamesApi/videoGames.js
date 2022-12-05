@@ -1,6 +1,6 @@
 const axios = require('axios');
 require('dotenv').config();
-const{DB_APPI} = process.env;
+const{DB_APPI,PORT} = process.env;
 
 
 //busca los datos en la api con un promise.all para que se ejecuten al mismo tiempo
