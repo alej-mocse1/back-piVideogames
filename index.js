@@ -1,7 +1,7 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 require('dotenv').config()
-const { PORT } =  process.env
+
 
 
 // conn.sync({ alter: true }).then(() => {
@@ -10,7 +10,7 @@ const { PORT } =  process.env
 //   });
 // });
 
-server.listen(PORT, async() => {
+server.listen(3003, async() => {
   await conn.sync({alter:true}),
-  console.log('%s listening ' , process.env.PORT); 
+  console.log('%s listening ' ); 
 })
