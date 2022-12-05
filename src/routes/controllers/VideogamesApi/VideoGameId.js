@@ -9,7 +9,7 @@ const{DB_APPI} = process.env;
 const videogameID = async (id) => {
 
 
-    const resp = await axios.get(`https://api.rawg.io/api/games/${id}?key=49a5370f78314b399b71efd92311605c`);
+    const resp = await axios.get(`https://api.rawg.io/api/games/${id}?key=${DB_APPI}`);
 
     const generes =  resp.data.genres.map(element => {
         return element.name

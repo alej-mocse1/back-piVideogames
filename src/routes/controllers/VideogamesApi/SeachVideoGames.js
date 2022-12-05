@@ -6,7 +6,7 @@ const{DB_APPI, DB_DEPLOY} = process.env;
 
 const SeachVideoGames = async (search) => {
   
-const searchVg = await axios.get(`https://api.rawg.io/api/games?key=49a5370f78314b399b71efd92311605c&search=${search}`);
+const searchVg = await axios.get(`https://api.rawg.io/api/games?key=${DB_APPI}&search=${search}`);
  
   videosGamesSearch = searchVg.data.results.map((Element) => {
 

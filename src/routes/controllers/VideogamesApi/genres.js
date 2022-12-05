@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const searchGenres = async () => {
 
-    const SearchGenress = await axios.get(`https://api.rawg.io/api/genres?key=49a5370f78314b399b71efd92311605c`);
+    const SearchGenress = await axios.get(`https://api.rawg.io/api/genres?key=${DB_APPI}`);
 
     const results = SearchGenress.data.results.map((Element) => {
         return { 
